@@ -44,18 +44,37 @@
         p {
             padding-left: 10px;
         }
+
+        .horizontal{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .vertical{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(2, 520px);
+            width:auto;
+        }
     </style>
 </head>
 
 <body>
     <div>
-        <button onclick="document.getElementById('cards').'">
+        <button onclick="noLayout()">
+            Ingen layout
+        </button>
+        <button onclick="verticalLayout()">
             Vertikal layout
         </button>
-        <button>
+        <button onclick="horizontalLayout()">
             Horisontal layout
         </button>
-        <button>
+        <button onclick="gridLayout()">
             Grid layout
         </button>
     </div>
@@ -109,6 +128,8 @@
                 <li><tt>border</tt></li>
                 <li><tt>text-align</tt></li>
                 <li><tt>font-size</tt></li>
+                <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_new">Flexbox</a></li>
+                <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_new">Grid</a></li>
                 <li><a href="https://www.w3schools.com/css/default.asp" target="_new">W3Schools CSS Tutorial</a></li>
                 <li><a href="https://www.w3schools.com/cssref/default.asp" target="_new">W3Schools CSS Reference</a>
                 </li>
@@ -139,6 +160,27 @@
             </p>
         </div>
     </div>
+    <script>
+        function noLayout(){
+            document.getElementById('cards').classList.value = '';
+        }
+
+        function horizontalLayout(){
+            noLayout();
+            document.getElementById('cards').classList.add('horizontal');
+        }
+
+        function verticalLayout(){
+            noLayout();
+            document.getElementById('cards').classList.add('vertical');
+        }
+
+        function gridLayout(){
+            noLayout();
+            document.getElementById('cards').classList.add('grid');
+        }
+
+    </script>
 </body>
 
 </html>
