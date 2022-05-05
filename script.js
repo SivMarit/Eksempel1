@@ -91,14 +91,6 @@ function showJavaScript() {
             ved
             å manipulere HTML- og CSS-kode på en nettside ved hjelp av JavaScript.
             <ul>
-                <li><tt>background-color</tt></li>
-                <li><tt>color</tt></li>
-                <li><tt>padding</tt></li>
-                <li><tt>margin</tt></li>
-                <li><tt>border</tt></li>
-                <li><tt>border-radius</tt></li>
-                <li><tt>text-align</tt></li>
-                <li><tt>font-size</tt></li>
                 <li>Det finnes en W3Schools JavaScript Tutorial, men her anbefaler vi heller å følge kurset vårt på
                     Moodle.</li>
                 <li><a href="https://www.w3schools.com/jsref/default.asp" target="_new">W3Schools JavaScript
