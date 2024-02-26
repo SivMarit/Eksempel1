@@ -71,3 +71,4 @@ function selectLegs(previousNumber, currentNumber, nextNumber) {
         <button onclick="selectLegs${nextNumber}()">▶</button>
     `;
 }
+
