@@ -103,7 +103,6 @@ function showJavaScript() {
 
 
 
-// variables not defined
 
 
 function showBodyGame(head_currentNumber, body_currentNumber, legs_currentNumber) {
@@ -133,41 +132,13 @@ function showBodyGame(head_currentNumber, body_currentNumber, legs_currentNumber
         <div id="head" class="bodyPart"></div>
         <div id="body" class="bodyPart"></div>
         <div id="legs" class="bodyPart"></div>
-    
+    </div>
 
     `;
 
-    
-
-    selectHead();
-    selectBody();
-    selectLegs();
-
-    function selectHead() {
-        document.getElementById('head').innerHTML = /*HTML*/` 
-    <button onclick="changeHead(-1)">◀</button>
-    <img src="${headImages[headIndex]}" />
-    <button onclick="changeHead(+1)">▶</button>
-    `;
-    }
-
-    function selectBody() {
-        document.getElementById('body').innerHTML = /*HTML*/`
-        <button onclick="changeBody(-1)">◀</button>
-        <img src="${bodyImages[bodyIndex]}" />
-        <button onclick="changeBody(+1)">▶</button>
-    `;
-
-    }
-
-    function selectLegs() {
-        document.getElementById('legs').innerHTML = /*HTML*/`
-        <button onclick="changeLegs(-1)">◀</button>
-        <img src="${legsImages[legsIndex]}" />
-        <button onclick="changeLegs(+1)">▶</button>
-    `;
-
-    }
+    selectHead(head_currentNumber);
+    selectBody(body_currentNumber);
+    selectLegs(legs_currentNumber);
 
     function changeHead(direction) {
         headIndex = (headIndex + direction + headImages.length) % headImages.length;
@@ -181,6 +152,36 @@ function showBodyGame(head_currentNumber, body_currentNumber, legs_currentNumber
         legsIndex = (legsIndex + direction + legsImages.length) % legsImages.length;
         selectLegs();
     }
+    function selectHead() {
+        console.log("headIndex:". headIndex);
+        document.getElementById('head').innerHTML = /*HTML*/` 
+            <button onclick="changeHead(-1)">◀</button>
+            <img src="${headImages[headIndex]}" />
+            <button onclick="changeHead(+1)">▶</button>
+    `;
+    }
+
+    function selectBody() {
+        console.log("bodyIndex:". bodyIndex);
+        document.getElementById('body').innerHTML = /*HTML*/`
+            <button onclick="changeBody(-1)">◀</button>
+            <img src="${bodyImages[bodyIndex]}" />
+            <button onclick="changeBody(+1)">▶</button>
+    `;
+
+    }
+
+    function selectLegs() {
+        console.log("legsIndex:". legsIndex);
+        document.getElementById('legs').innerHTML = /*HTML*/`
+            <button onclick="changeLegs(-1)">◀</button>
+            <img src="${legsImages[legsIndex]}" />
+            <button onclick="changeLegs(+1)">▶</button>
+    `;
+
+    }
+
+   
 }
 
 function blankAll() {
@@ -191,99 +192,4 @@ function blankAll() {
     document.getElementById('cardGame').innerHTML = '';
 }
 
-// function selectHead1() {
-//     document.getElementById('head').innerHTML = /*HTML*/`
-//         <button onclick="selectHead4()">◀</button>
-//         <img src="img/head1.png" />
-//         <button onclick="selectHead2()">▶</button>
-//     `;
-// }
-
-// function selectHead2() {
-//     document.getElementById('head').innerHTML = /*HTML*/`
-//         <button onclick="selectHead1()">◀</button>
-//         <img src="img/head2.png" />
-//         <button onclick="selectHead3()">▶</button>
-//     `;
-// }
-
-// function selectHead3() {
-//     document.getElementById('head').innerHTML = /*HTML*/`
-//         <button onclick="selectHead2()">◀</button>
-//         <img src="img/head3.png" />
-//         <button onclick="selectHead4()">▶</button>
-//     `;
-// }
-
-// function selectHead4() {
-//     document.getElementById('head').innerHTML = /*HTML*/`
-//         <button onclick="selectHead3()">◀</button>
-//         <img src="img/head4.png" />
-//         <button onclick="selectHead1()">▶</button>
-//     `;
-// }
-
-// function selectBody1() {
-//     document.getElementById('body').innerHTML = /*HTML*/`
-//         <button onclick="selectBody4()">◀</button>
-//         <img src="img/body1.png" />
-//         <button onclick="selectBody2()">▶</button>
-//     `;
-// }
-
-// function selectBody2() {
-//     document.getElementById('body').innerHTML = /*HTML*/`
-//         <button onclick="selectBody1()">◀</button>
-//         <img src="img/body2.png" />
-//         <button onclick="selectBody3()">▶</button>
-//     `;
-// }
-
-// function selectBody3() {
-//     document.getElementById('body').innerHTML = /*HTML*/`
-//         <button onclick="selectBody2()">◀</button>
-//         <img src="img/body3.png" />
-//         <button onclick="selectBody4()">▶</button>
-//     `;
-// }
-
-// function selectBody4() {
-//     document.getElementById('body').innerHTML = /*HTML*/`
-//         <button onclick="selectBody3()">◀</button>
-//         <img src="img/body4.png" />
-//         <button onclick="selectBody1()">▶</button>
-//     `;
-// }
-
-// function selectLegs1() {
-//     document.getElementById('legs').innerHTML = /*HTML*/`
-//         <button onclick="selectLegs4()">◀</button>
-//         <img src="img/legs1.png" />
-//         <button onclick="selectLegs2()">▶</button>
-//     `;
-// }
-
-// function selectLegs2() {
-//     document.getElementById('legs').innerHTML = /*HTML*/`
-//         <button onclick="selectLegs1()">◀</button>
-//         <img src="img/legs2.png" />
-//         <button onclick="selectLegs3()">▶</button>
-//     `;
-// }
-
-// function selectLegs3() {
-//     document.getElementById('legs').innerHTML = /*HTML*/`
-//         <button onclick="selectLegs2()">◀</button>
-//         <img src="img/legs3.png" />
-//         <button onclick="selectLegs4()">▶</button>
-//     `;
-// }
-
-// function selectLegs4() {
-//     document.getElementById('legs').innerHTML = /*HTML*/`
-//         <button onclick="selectLegs3()">◀</button>
-//         <img src="img/legs4.png" />
-//         <button onclick="selectLegs1()">▶</button>
-//     `;
-
-
+// MANGLER Å FÅ BILDENE TIL Å VISES
